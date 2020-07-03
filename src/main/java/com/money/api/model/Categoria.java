@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Categoria {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long codigo;
 
     private String nome;
