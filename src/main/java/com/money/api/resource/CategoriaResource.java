@@ -32,6 +32,7 @@ public class CategoriaResource {
         //pegar a requisição atual, adiciona o codigo e seta o Header Location com a uri
         final URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{codigo}")
                 .buildAndExpand(categoriaSalva.getCodigo()).toUri();
+
         response.setHeader("Location", uri.toASCIIString());
 
         //retorna a uri e status code
