@@ -1,5 +1,7 @@
 package com.money.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -40,6 +42,12 @@ public class Pessoa {
 
     public Boolean getAtivo() {
         return ativo;
+    }
+
+    @JsonIgnoreProperties
+    @Transient
+    public Boolean isInativo() {
+        return !this.ativo;
     }
 
     public void setAtivo(Boolean ativo) {
